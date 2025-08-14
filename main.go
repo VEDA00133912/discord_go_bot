@@ -50,11 +50,13 @@ func main() {
 	var commandHandlers []*botRouter.Handler
 	// 所属しているサーバすべてにスラッシュコマンドを追加する
 	// NewCommandHandlerの第二引数を空にすることで、グローバルでの使用を許可する
-	commandHandler := botRouter.NewCommandHandler(discord, "")
+	commandHandler := botRouter.NewCommandHandler(discord, "1327953028619304981")
 	// 追加したいコマンドをここに追加
 	commandHandler.CommandRegister(commands.PingCommand())
 	commandHandler.CommandRegister(commands.RecordCommand())
 	commandHandler.CommandRegister(commands.DisconnectCommand())
+	commandHandler.CommandRegister(commands.GosenChoyenCommand())
+	commandHandler.CommandRegister(commands.IconCommand())
 	commandHandlers = append(commandHandlers, commandHandler)
 
 	fmt.Println("Discordに接続しました。")
